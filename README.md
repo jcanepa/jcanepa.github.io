@@ -2,8 +2,8 @@
 
 ## Development Tooling
 
-- github CLI
-- Visual Studio Code
+- [GitHub CLI](https://github.com/cli/cli)
+- [VS Code](https://code.visualstudio.com/)
 
 ## Components
 
