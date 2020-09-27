@@ -27,11 +27,19 @@ nav a.nav-link, .btn {
 .bg-black {
     background-color: rgb(27, 27, 27);
 }
-li.extra-credit {
+li.extra-credit, li.in-progress {
     list-style: none;
 }
 li.extra-credit:before {
     content: "\f005";
+    font-family: 'Font Awesome\ 5 Free';
+    display: inline-block;
+    margin-left: -1.4em;
+    width: 1.4em;
+    color: #ffc107;
+}
+li.in-progress:before {
+    content: "\f0ae";
     font-family: 'Font Awesome\ 5 Free';
     display: inline-block;
     margin-left: -1.4em;
