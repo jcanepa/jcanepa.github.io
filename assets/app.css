@@ -60,3 +60,10 @@ ul.text-uppercase {
 footer .social {
     font-size: 2rem;
 }
+hr {
+    border-top: 1px solid rgb(197 197 197 / 0.5);
+}
+.ctas .card {
+    background-color: transparent;
+    border: none;
+}
