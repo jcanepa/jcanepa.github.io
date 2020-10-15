@@ -55,3 +55,6 @@ hr {
     background-color: transparent;
     border: none;
 }
+.text-muted {
+    color: #615a53!important;
+}
