@@ -58,3 +58,6 @@ hr {
 .text-muted {
     color: #615a53!important;
 }
+.navbar-dark .navbar-nav .nav-link, hr {
+    color: #615a53
+}
