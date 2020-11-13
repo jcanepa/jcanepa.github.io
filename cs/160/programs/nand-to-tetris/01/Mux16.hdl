@@ -1,11 +1,6 @@
-// This file is part of www.nand2tetris.org
-// and the book "The Elements of Computing Systems"
-// by Nisan and Schocken, MIT Press.
-// File name: projects/01/Mux16.hdl
-
 /**
- * 16-bit multiplexor: 
- * for i = 0..15 out[i] = a[i] if sel == 0 
+ * 16-bit multiplexor:
+ * for i = 0..15 out[i] = a[i] if sel == 0
  *                        b[i] if sel == 1
  */
 
@@ -14,5 +9,69 @@ CHIP Mux16 {
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+        Not(in=sel, out=notsel);
+
+        And(a=a[0], b=notsel, out=aandout0);
+        And(a=sel, b=b[0], out=bandout0);
+        Or(a=aandout0, b=bandout0, out=out[0]);
+
+        And(a=a[1], b=notsel, out=aandout1);
+        And(a=sel, b=b[1], out=bandout1);
+        Or(a=aandout1, b=bandout1, out=out[1]);
+
+        And(a=a[2], b=notsel, out=aandout2);
+        And(a=sel, b=b[2], out=bandout2);
+        Or(a=aandout2, b=bandout2, out=out[2]);
+
+        And(a=a[3], b=notsel, out=aandout3);
+        And(a=sel, b=b[3], out=bandout3);
+        Or(a=aandout3, b=bandout3, out=out[3]);
+
+        And(a=a[4], b=notsel, out=aandout4);
+        And(a=sel, b=b[4], out=bandout4);
+        Or(a=aandout4, b=bandout4, out=out[4]);
+
+        And(a=a[5], b=notsel, out=aandout5);
+        And(a=sel, b=b[5], out=bandout5);
+        Or(a=aandout5, b=bandout5, out=out[5]);
+
+        And(a=a[6], b=notsel, out=aandout6);
+        And(a=sel, b=b[6], out=bandout6);
+        Or(a=aandout6, b=bandout6, out=out[6]);
+
+        And(a=a[7], b=notsel, out=aandout7);
+        And(a=sel, b=b[7], out=bandout7);
+        Or(a=aandout7, b=bandout7, out=out[7]);
+
+        And(a=a[8], b=notsel, out=aandout8);
+        And(a=sel, b=b[8], out=bandout8);
+        Or(a=aandout8, b=bandout8, out=out[8]);
+
+        And(a=a[9], b=notsel, out=aandout9);
+        And(a=sel, b=b[9], out=bandout9);
+        Or(a=aandout9, b=bandout9, out=out[9]);
+
+        And(a=a[10], b=notsel, out=aandout10);
+        And(a=sel, b=b[10], out=bandout10);
+        Or(a=aandout10, b=bandout10, out=out[10]);
+
+        And(a=a[11], b=notsel, out=aandout11);
+        And(a=sel, b=b[11], out=bandout11);
+        Or(a=aandout11, b=bandout11, out=out[11]);
+
+        And(a=a[12], b=notsel, out=aandout12);
+        And(a=sel, b=b[12], out=bandout12);
+        Or(a=aandout12, b=bandout12, out=out[12]);
+
+        And(a=a[13], b=notsel, out=aandout13);
+        And(a=sel, b=b[13], out=bandout13);
+        Or(a=aandout13, b=bandout13, out=out[13]);
+
+        And(a=a[14], b=notsel, out=aandout14);
+        And(a=sel, b=b[14], out=bandout14);
+        Or(a=aandout14, b=bandout14, out=out[14]);
+
+        And(a=a[15], b=notsel, out=aandout15);
+        And(a=sel, b=b[15], out=bandout15);
+        Or(a=aandout15, b=bandout15, out=out[15]);
 }
