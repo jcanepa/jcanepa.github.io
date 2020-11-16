@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+    <meta charset="utf-8" />
+    <style>
+        html, body {
+        margin: 0;
+        padding: 0;
+        }
+        canvas {
+        display: block;
+        }
+    </style>
+  </head>
+  <body>
+    <script>
+        let slider_x, slider_y, slider_color;
+        let sides = 3;
+
+        function setup() {
+        createCanvas(900, 600);
+
+        createElement('h4', 'Design your polygon:').style('font-family', 'sans-serif').position(20,5);
+
+        setup_polygon_sides();
+        setup_polygon_color();
+        setup_polygon_position();
+        }
+
+        function setup_polygon_sides()
+        {
+        createElement('label', 'Sides').style('font-family', 'sans-serif').position(20, 55);
+
+        let input_sides = createInput("3");
+        input_sides.input(polygon_sides_event);
+        input_sides.position(75, 55);
+        input_sides.style('width', '80px');
+        }
+
+        function setup_polygon_color()
+        {
+        colorMode(HSB);
+
+        createElement('label', 'Color').style('font-family', 'sans-serif').position(20, 85);
+
+        slider_color = createSlider(0, 360, 60, 40);
+        slider_color.position(75, 85);
+        slider_color.style('width', '80px');
+        }
+
+        function setup_polygon_x_position()
+        {
+        createElement('label', 'x').style('font-family', 'sans-serif').position(20, 140);
+
+        slider_x = createSlider(0, 900, 450, 10);
+        slider_x.position(35, 140);
+        slider_x.style('width', '80px');
+        }
+
+        function setup_polygon_y_position()
+        {
+        createElement('label', 'y').style('font-family', 'sans-serif').position(150, 140);
+
+        slider_y = createSlider(0, 600, 300, 10);
+        slider_y.position(135, 140);
+        slider_y.style('width', '80px');
+        slider_y.style('transform', 'rotate(90deg)')
+        }
+
+        function setup_polygon_position()
+        {
+        createElement('label', 'Position').style('font-family', 'sans-serif').position(20, 115);
+
+        setup_polygon_x_position();
+        setup_polygon_y_position();
+        }
+
+        function draw()
+        {
+        // color
+        let color = slider_color.value();
+        background(color, 100, 100, 1)
+
+        // position
+        let target;
+        let x = slider_x.value();
+        let y = slider_y.value();
+        stroke(000);
+        strokeWeight(10)
+        point(x,y);
+
+        // draw the shape
+        polygon(x, y, 70, sides);
+        }
+
+        function polygon_sides_event() {
+        sides = this.value();
+        }
+
+        function drawUserShape() {
+        console.log('Clicked.');
+        }
+
+        function polygon(x, y, radius, npoints) {
+        let angle = TWO_PI / npoints;
+        beginShape();
+        for (let a = 0; a < TWO_PI; a += angle) {
+            let sx = x + cos(a) * radius;
+            let sy = y + sin(a) * radius;
+            vertex(sx, sy);
+        }
+        endShape(CLOSE);
+        }
+    </script>
+  </body>
+</html>
