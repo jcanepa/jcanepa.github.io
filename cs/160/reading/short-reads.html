@@ -100,6 +100,7 @@
                             <li>“Surrender to entropy and wallow in the mire”</li>
                         </ol>
                         <p>The big advantage a program running on the market has is that it has users, and feedback. "Maintanence is learning" and "function melts form".</p>
+                        <p>I call balls of mud "Spaghetti code". In my time as a web application developer, I've had to grab a fork more than once.</p>
                     </div>
                     <div class="col-12 py-5" id="quora">
                         <p class="lead">
@@ -163,10 +164,19 @@
                         </p>
                         <hr class="py-3">
                         <p>
-                            The paper's official title goes on to include, <i>Including of Extreme Programming, Caused by Requirements Volatility</i>. In his opening paragraph the author sets out to examine project management methodologies in software projects, specifically extreme programming when set against project requirements.
+                            The paper's official title goes on to include, <i>Including of Extreme Programming, Caused by Requirements Volatility</i>. In his opening paragraph the author sets out to examine project management methodologies in software projects, specifically extreme programming when set against project requirements. He later states the paper's aim - to answer the question of why there will never be a silver bullet in software engineering.
                         </p>
-                        <p>Next, the author describes the process of building his first software project. He describes his workflow as "seat-of-the-pants build-it-and-fix-it-until-it-works method", where he discovered some requirements, coded a little, discovered a little more, coded a little more, and so on. The subsequent steps tackle testing, which leads to discovery of new requirements and bug squashing. "I was discovering requirement flaws and correcting them during coding as a result of what I learned during coding". Even after a long career in software programming, he says "programming still feels like skiing with an avalanche following closely behind."</p>
-                        <img src="https://static01.nyt.com/images/2016/08/05/us/05onfire1_xp/05onfire1_xp-superJumbo-v2.jpg?quality=90&auto=webp" alt="This is fine meme." class="w-50 py-3">
+                        <p>Next, the author describes the process of building his first software project. He describes his workflow as "seat-of-the-pants build-it-and-fix-it-until-it-works method", where he discovered some requirements, coded a little, discovered a little more, coded a little more, and so on. The subsequent steps tackle testing, which leads to discovery of new requirements and bug squashing. "I was discovering requirement flaws and correcting them during coding as a result of what I learned during coding".</p>
+                        <p>After a long career in software programming, he "still feels like skiing with an avalanche following closely behind." He blames the seldom-aknowledged elephant in the room: ever-changing requirements.</p>
+                        <img src="https://static01.nyt.com/images/2016/08/05/us/05onfire1_xp/05onfire1_xp-superJumbo-v2.jpg?quality=90&auto=webp" alt="This is fine meme." class="w-50 my-4">
+                        <p>
+                            There is no silver bullet in software engineering! Issues arise from either the "essense" or the "accidents". The accidents are everything that's used to provide a software solution (programming language, tools and methods). The essense is the the project's requirements, "deciding precisely what to build", which Brooks calls the most important part, and the one hardest to fix down the line.
+                        </p>
+                        <p>
+                            The author reveals the paper's main argument, that the central problem in software engineering is problems of essence. He, like Brooks belives there will never be so-called "silver bullet" in software engineering. Barry goes on to explain that since 1968, software engineering methodologies have improved parts of the "accident" space of software engineering. However, none of these popular methodologies have been equipt to sufficiently address issues that arise from the essence (usually a change of a project's requirements during development).
+                        </p>
+                        <p>The reason the essence space is so difficult to capture, is because requirements change and they are misunderstood. A study cited in the paper states of all application maintainence, 20% is correcting errors and 80% is changing requirements. The Belady-Lehman graph shows the fragility of a legacy codebase as a function over time.</p>
+                        <p>The paper goes on to layout the most popular software engineering methodologies: Waterfall, Structured programming and the Bild-and-fix model.</p>
                     </div>
                     <div class="col-12 py-5" id="hard">
                         <p class="lead text-right">
@@ -174,8 +184,36 @@
                         </p>
                         <hr class="py-3">
                         <p>
-                            It just is.
+                            Wilson's post on software starts with a quote from <i>Dreaming in Code</i>, "Software is hard". The autor attempts to answer the question posed in the book, "Why is software a never-ending state of crisis?...Why can't we bild software the same way we build bridges?".
                         </p>
+                        <p>The author does a quick summary of the books details before providing insight on some of the fundamental issues at OSAF. He hilights the problem of CEO hubris and of having no pressure of (time or money) constraints to ship.</p>
+                        <p>He goes on to explicitly list out the Chandler project's problems:</p>
+                        <ol>
+                            <li>Chandler's peer-to-peer requirement was trivial. It's inclusion as a requirement handycapped the project unnecessarily.</li>
+                            <li>Building software on multiple platforms from the start</li>
+                            <li>Language selection and hiring of non-fluent programmers to work in the language</li>
+                            <li>Ambiguous, fluid project definition and unrestrained scope creep. The democratic decision-making style of the company compounded both of these issues. Decisions to "invent something entirely new from first principles."</li>
+                            <li>No decision is final. Years are spent revisiting and re-thinking complex concepts that have already been decided on.</li>
+                        </ol>
+                        <blockquote class="blockquote py-3">
+                            <p class="mb-0">There's some cost point, some number of development man-months, at which each of those features becomes simply not worth the expense.  The problem is that we're never quite sure what a feature is going to cost until it's done.</p>
+                            <footer class="blockquote-footer">Kyle Wilson <cite title="Software Is Hard">Software Is Hard</cite></footer>
+                        </blockquote>
+                        <p>The author shows one metric for measuring programming: lines of code. At the same time he cautions, "There's not really any good way to measure the complexity or scale of a piece of software. . .Lines of code is a lousy metric, but it's the only one we've got." That said, it's impossible to discern the magnitude of programmers by looking at a finished product. Analysing complexity of completed code isn't any better.</p>
+                        <figure>
+                            <img src="/assets/images/reading/software-is-hard.png" alt="Screenshot of excerpt from Software is Hard by Kyle Wilson" class="w-100 py-4 border">
+                            <figcaption class="small text-muted">Excerpt from Software is Hard by Kyle Wison</figcaption>
+                        </figure>
+                        <p>The idea of measuring complexity where <i>n</i> is number of lines of code as:</p>
+                        <ul>
+                            <li>O(n) - a well designed program where lines of code are tightly coupled to their limited scope.</li>
+                            <li>O(n^2) - a poorly designed program where any line of code can call any other line.</li>
+                        </ul>
+                        <p>This difference in orders of complexity illustrates the importance of object oriented programming and a well-designed system, and cautions on the use of procedural style coding.</p>
+                        <blockquote class="blockquote py-3">
+                            <p class="mb-0">"the nature of software is that the problems are always different"</p>
+                        </blockquote>
+                    </div>
                 </div>
             </div>
         </div>
